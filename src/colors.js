@@ -363,8 +363,6 @@ export const colors = [
       { name: '700', color: '#455A64' },
       { name: '800', color: '#37474F' },
       { name: '900', color: '#263238' },
-      { name: 'Black', color: '#000000' },
-      { name: 'White', color: '#FFFFFF' },
     ],
   },
 ];

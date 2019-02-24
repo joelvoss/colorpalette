@@ -8,43 +8,31 @@ export default function App() {
   return (
     <div className="colorpalette">
       <Global styles={styles.global} />
-      <h1>Color palette</h1>
+      <h1 className="h3">Color palette</h1>
       <div className="flex-row">
         <div className="flex-col">
-          <h2>Primary</h2>
-          <Palette />
+          <h2 className="h5">
+            Primary <br />
+            <span className="text-small">Pick your primary color</span>
+          </h2>
 
-          <h2>Complementary</h2>
-          <Palette />
-
-          <h2>Analogous</h2>
-          <Palette />
-          <Palette />
-
-          <h2>Triadic</h2>
-          <Palette />
-          <Palette />
-        </div>
-        <div css={{ flex: '0 0 350px' }} className="flex-col">
           {colors.map(col => {
             return (
-              <div key={col.base} css={{ display: 'flex' }}>
-                {col.colors.map(c => {
-                  return (
-                    <div
-                      key={c.name}
-                      css={{
-                        width: 35,
-                        height: 35,
-                        backgroundColor: c.color,
-                        border: '1px solid #efefef',
-                      }}
-                    />
-                  );
-                })}
-              </div>
+              <Palette key={col.base} name={col.base} colors={col.colors} />
             );
           })}
+        </div>
+        <div css={{ flex: '0 0 350px' }} className="flex-col">
+          <h2 className="h5">Complementary</h2>
+          <Palette />
+
+          <h2 className="h5">Analogous</h2>
+          <Palette />
+          <Palette />
+
+          <h2 className="h5">Triadic</h2>
+          <Palette />
+          <Palette />
         </div>
       </div>
     </div>
