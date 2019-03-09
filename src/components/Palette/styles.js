@@ -2,43 +2,54 @@ import { css } from '@emotion/core';
 
 export default {
   container: css`
-    display: flex;
-    flex-flow: row wrap;
-    align-items: stretch;
-    margin: 0 0 0.5rem 0;
+    overflow: hidden;
   `,
-  h3: css`
-    display: block;
-    flex: 1 0 100%;
-    width: 100%;
-    margin: 0 0 0.25em;
+  table: css`
+    border-collapse: collapse;
   `,
-  kachel: css`
+  th: css`
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1em;
+    text-align: center;
+    padding: 0.25rem;
+  `,
+  colSpacer: css`
+    border-left: 1px solid #dedede;
+  `,
+  rowName: css`
+    width: auto;
+    font-size: 0.75rem;
+    padding: 0 0.5rem 0 0;
+    text-align: right;
+    border-bottom: 1px solid #dedede;
+  `,
+  td: css`
     position: relative;
-  `,
-  inner: css`
-    position: relative;
-    width: 65px;
-    height: 0;
-    padding-top: 100%;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
 
     &:hover span {
-      opacity: 1;
+      border-radius: 0.5rem;
     }
 
-    span {
+    & span {
+      display: block;
       position: absolute;
-      bottom: calc(100% + 0.25em);
+      top: 0;
+      right: 0;
+      bottom: 0;
       left: 0;
       width: 100%;
-      background-color: #333;
-      color: #fff;
-      padding: 0.25em;
-      text-align: center;
-      border-radius: 3px;
-      opacity: 0;
-      transition: opacity 75ms ease-out;
+      height: 100%;
+      border-radius: 0px;
+      transition: border-radius 175ms;
     }
+  `,
+  active: css`
+    border-radius: 100% !important;
   `,
 };
